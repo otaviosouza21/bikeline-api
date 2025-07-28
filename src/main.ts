@@ -13,6 +13,12 @@ async function bootstrap() {
     }),
   );
 
+   // ✅ Habilita CORS para localhost:3000 (frontend)
+  app.enableCors({
+    origin: 'https://bikeline.com.br', // ou ['http://localhost:3000', 'https://seusite.com']
+    credentials: true, // se você usa cookies/autenticação
+  });
+
   await app.listen(process.env.PORT ?? 3002);
 }
 bootstrap();
