@@ -15,7 +15,7 @@ async function bootstrap() {
 
    // ✅ Habilita CORS para localhost:3000 (frontend)
   app.enableCors({
-    origin: 'https://bikeline.com.br', // ou ['http://localhost:3000', 'https://seusite.com']
+    origin: ['https://www.bikeline.com.br', 'http://localhost:3000'],
     credentials: true, // se você usa cookies/autenticação
   });
 
