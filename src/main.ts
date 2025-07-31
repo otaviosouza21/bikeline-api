@@ -15,11 +15,19 @@ async function bootstrap() {
 
   // ✅ Habilita CORS para localhost:3000 (frontend)
   app.enableCors({
-    origin: [
-      'https://bikeline.com.br',
-      'https://www.bikeline.com.br',
-      'http://localhost:3000',
-    ],
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        'https://bikeline.com.br',
+        'https://www.bikeline.com.br',
+        'http://localhost:3000',
+      ];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true, // caso precise enviar cookies ou autorizações
   });
 
   await app.listen(process.env.PORT ?? 3002);
