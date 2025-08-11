@@ -10,8 +10,8 @@ export class LeadService {
 
   async create(dto: CreateLeadDto) {
     const data: Prisma.LeadCreateInput = {
-      nome: dto.email,
-      email: dto.nome,
+      nome: dto.nome,
+      email: dto.email,
       telefone: dto.telefone,
       dt_nascimento: dto.dt_nascimento,
     };
