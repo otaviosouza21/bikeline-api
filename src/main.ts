@@ -44,6 +44,7 @@ async function bootstrap() {
     'https://www.bikeline.com.br',
     'http://localhost:3000',
     'http://localhost:3001',
+    'https://api.bikeline.com.br',
   ]);
 }
 
